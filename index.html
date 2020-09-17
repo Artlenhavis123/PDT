@@ -1,0 +1,1467 @@
+<html class="gr__idtapp_firebaseapp_com">
+
+<head>
+  <script data-ad-client="ca-pub-3588555003664525" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>Perfrom Data Track</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/PDT.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+  <div id="Main" class="main-div" >
+    <h3>Perform Data Track Login</h3>
+    <h4 id="Try Again"></h4>
+    <input type="username" placeholder="Username:" id="MyUsername">
+    <input type="password" placeholder="Password:" id="MyPassword">
+
+    <button onclick="login()">login to account</button>
+  </div>
+
+  <div id="teacherLogIn" class="teacherLogedin-div" style="display: none;">
+    <form>
+      <p>
+      </p>
+      <h2>Add Students</h2>
+      <div class="StudentsName">
+        <input type="text" placeholder="Candidate First Name: " id="SFN" oninput="ConfirmFirstName.value = SFN.value"
+          autocapitalize="words" required="">
+      </div>
+      <div class="StudentsName">
+        <input type="text" placeholder="Candidate Surname: " id="SSN" oninput="ConfirmLastName.value = SSN.value"
+          autocapitalize="words" required="">
+      </div>
+      <div class="StudentsName">
+        <input type="number" placeholder="ILN: " id="SID" oninput="ConfirmID.value = SID.value" required="">
+      </div>
+      <div class="StudentsName">
+        <input type="text" placeholder="Session Date: " id="SD" oninput="ConfirmDate.value = SD.value" require=""
+          name="Date">
+      </div>
+      <div class="StudentsName">
+        <select name="ExamGenre" id="EG" onchange="ConfirmExamGenre.value = EG.value">
+          <option value="Exam Genre" selected="" disabled="" hidden="">Exam Genre</option>
+          <option value="CheerDance">Cheer Dance</option>
+          <option value="Classical Ballet">Classical Ballet</option>
+          <option value="Contempary">Contemporary</option>
+          <option value="Drama">Drama</option>
+          <option value="Lyrical">Lyrical</option>
+          <option value="Modern Jazz">Modern Jazz</option>
+          <option value="Musical Theatre">Musical Theatre</option>
+          <option value="Singing">Singing</option>
+          <option value="StreetDance">Street Dance</option>
+          <option value="Tap">Tap</option>
+        </select>
+      </div>
+      <div class="StudentsName">
+        <select name="ExamLevel" id="EL" onchange="ConfirmExamLevel.value = EL.value">
+          <option value="Exam Level" selected="" disabled="" hidden="">Exam Level</option>
+          <option value="Introductory">Introductory</option>
+          <option value="Primary Level">Primary Level</option>
+          <option value="Grade One">Grade One</option>
+          <option value="Grade Two">Grade Two</option>
+          <option value="Grade Three">Grade Three</option>
+          <option value="Grade Four">Grade Four</option>
+          <option value="Grade Five">Grade Five</option>
+          <option value="Grade Six">Grade Six</option>
+          <option value="Grade Seven">Grade Seven</option>
+          <option value="Grade Eight">Grade Eight</option>
+          <option value="Grade Nine">Grade Nine</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced Foundation">Advanced Foundation</option>
+          <option value="Advanced One">Advanced One</option>
+          <option value="Advanced Two">Advanced Two</option>
+          <option value="CDTL Pratical Assessment">CDTL Pratical Assessment</option>
+          <option value="Licenciate">Licenciate</option>
+          <option value="Fellowship">Fellowship</option>
+          <option value="Bronze Medal">Bronze Medal</option>
+          <option value="Silver Medal">Silver Medal</option>
+          <option value="Gold Medal">Gold Medal</option>
+          <option value="First Performer Star">First Performer Star</option>
+          <option value="Second Performer Star">Second Performer Star</option>
+          <option value="Third Performer Star">Third Performer Star</option>
+          <option value="Shield">Shield</option>
+          <option value="Cup">Cup</option>
+          <option value="Patrons Award">Patrons Award</option>
+          <option value="Memorail Award">Memorail Award</option>
+        </select>
+      </div>
+      <p></p>
+      <div class="CheckingForm">
+        <h3>Entered Students</h3>
+        <table id="CheckFrom" class="CheckFromCss">
+          <thead>
+            <tr id="CheckFromTable">
+              <th>Candidates First Name</th>
+              <th>Candidates Surname</th>
+              <th>Exam Genre</th>
+              <th>Exam Level</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <button onclick="SumbitStudnet()">Submit</button>
+      <button onclick="ChangeStudnetMenu()">Amend Student</button>
+      <button onclick="logout()">Logout</button>
+    </form>
+  </div>
+
+  <div id="Menu" class="TeacherMenu-div" style="display: none;">
+    <h1 id="WelcomePage">Welcome Helen Stokes</h1>
+    <h2>Teachers Area</h2>
+    <button onclick="SumbitStudnetMenu()">Add Student</button>
+    <button onclick="ChangeStudnetMenu()">Amend Student</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="Dev-Console" id="Dev-Console" style="display: none;">
+    <h1 id="WelcomePage"></h1>
+    <h2>Dev Area</h2>
+    <button onclick="DownloadDatabase()">Download Database</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="Examiner-Menu-div" id="exam-menu" style="display: none;">
+    <h1 id="WelcomePage"></h1>
+    <h2>Examiner Area</h2>
+    <button onclick="UploadResultspage()">Upload Results</button>
+    <button onclick="PrintResultsPage()">See Results</button>
+    <!-- <button onclick="PrintCertPage()">Print Certificate</button> -->
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div id="Ammend Student" class="AmendStudent-div" style="display: none;">
+    <h3>Update Existing Student</h3>
+    <label for="Search Name"> Please enter the student's name</label>
+    <input type="text" id="Search Name" required="">
+    <label for="AddInfo">Please enter the student's ID</label>
+    <input type="text" id="AddInfo">
+    <button onclick="Updatestudent()">Search</button>
+    <button onclick="SumbitStudnetMenu()">Add Student</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div id="exam" class="Examiner-div" style="display: none;">
+    <h2>Examiner Area</h2>
+    <h2 id="WelcomePage"></h2>
+    <div class="ExamArea-enterStudent">
+      <div class="Examiner-input">
+        <input type="text" id="RSD" placeholder="Session Date:">
+        <input type="number" id="RTID" placeholder="Teacher ID: ">
+      </div>
+      <div class="StudentTable">
+        <table id="StduentTable">
+          <thead>
+            <tr id="StudentsTableRow">
+              <th>Candidate's Name</th>
+              <th>Candidate's ID</th>
+              <th>Exam Genre</th>
+              <th>Exam Level</th>
+              <th>Unqiue ID (Dev Only)</th>
+              <th>Upload Results</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <button onclick="SearchStudent()">Search Student</button>
+    <button id="Download">Download</button>
+    <button onclick="BackMenu()">Back</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div id="StudentsProfile" class="ProfileDiv" style="display: none;">
+    <h1>View Canidiate's Profile</h1>
+    <div class="ExamArea-enterStudent">
+      <div class="Examiner-input">
+        <h3> Enter Student</h3>
+        <input type="date" placeholder="Sessions Date (DD/MM/YYYY)" id="RSD" size="5">
+        <input type="number" placeholder="Candidates ID" id="RCID">
+        <input type="number" placeholder="Teachers ID" id="RTID">
+      </div>
+      <select name="ExamGenre" id="REG">
+        <option value="Exam Genre" selected="" disabled="" hidden="">Exam Genre</option>
+        <option value="CheerDance">Cheer Dance</option>
+        <option value="Classical Ballet">Classical Ballet</option>
+        <option value="Contempary">Contemporary</option>
+        <option value="Drama">Drama</option>
+        <option value="Lyrical">Lyrical</option>
+        <option value="ModernJazz">Modern Jazz</option>
+        <option value="MusicalTheatre">Musical Theatre</option>
+        <option value="Singing">Singing</option>
+        <option value="StreetDance">Street Dance</option>
+        <option value="Tap">Tap</option>
+      </select>
+      <select name="ExamLevel" id="REL">
+        <option value="Exam Level" selected="" disabled="" hidden="">Exam Level</option>
+        <option value="Introductory">Introductory</option>
+        <option value="Primary Level">Primary Level</option>
+        <option value="Grade One">Grade One</option>
+        <option value="Grade Two">Grade Two</option>
+        <option value="Grade Three">Grade Three</option>
+        <option value="Grade Four">Grade Four</option>
+        <option value="Grade Five">Grade Five</option>
+        <option value="Grade Six">Grade Six</option>
+        <option value="Grade Seven">Grade Seven</option>
+        <option value="Grade Eight">Grade Eight</option>
+        <option value="Grade Nine">Grade Nine</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced Foundation">Advanced Foundation</option>
+        <option value="Advanced One">Advanced One</option>
+        <option value="Advanced Two">Advanced Two</option>
+        <option value="CDTL Pratical Assessment">CDTL Pratical Assessment</option>
+        <option value="Licenciate">Licenciate</option>
+        <option value="Fellowship">Fellowship</option>
+        <option value="Bronze Medal">Bronze Medal</option>
+        <option value="Silver Medal">Silver Medal</option>
+        <option value="Gold Medal">Gold Medal</option>
+        <option value="First Performer Star">First Performer Star</option>
+        <option value="Second Performer Star">Second Performer Star</option>
+        <option value="Third Performer Star">Third Performer Star</option>
+        <option value="Shield">Shield</option>
+        <option value="Cup">Cup</option>
+        <option value="Patrons Award">Patrons Award</option>
+        <option value="Memorail Award">Memorail Award</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="View Results" class="ViewResults" style="display: none;">
+    <h1>View Results</h1>
+    <div class="VR-input">
+      <h3> Enter Session date and Teacher ID</h3>
+      <h4> <span id='ResNum'>1.</span> Technique <span id='ResNum'>2.</span> Control <span id='ResNum'>3.</span> Stamina & Agility <span id='ResNum'>4.</span> Musicality<br>
+        <span id='ResNum'>5.</span> Interpretation <span id='ResNum'>6.</span> Knowledge <span id='ResNum'>7.</span> Performance Skill <span id='ResNum'>8.</span> Personal Discipline</h4>
+      <input type="number" placeholder="Sessions Date" id="VRSD" size="5">
+      <input type="number" placeholder="Teachers ID" id="VRTID">
+    </div>
+    <table id="Resultst" class="ResultsTableCss">
+      <thead>
+        <tr id="ResultsTable">
+          <th>Candidates</th>
+          <th>Candidates ID</th>
+          <th>Teacher ID</th>
+          <th>Examiner ID</th>
+          <th>Exam Genre</th>
+          <th>Exam Level</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>Total Score</th>
+          <th>Result</th>
+          <th>Comments</th>
+          <th style="display: none;">Certificate</th>
+        </tr>
+      </thead>
+    </table>
+    <button onclick="RetreveResults()">Retrieve Results</button>
+    <button id="DownloadRTbl">Download</button>
+    <button onclick="BackMenu()" id="BB">Back</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="URP_div" id="URP" style="display: none;">
+    <h1 id="StudentPage"></h1>
+    <div class="SPROW">
+      <labe>Name:</label>
+        <label id="SName"></label>
+    </div>
+    <div class="SPROW">
+      <label for="">ILN:</label>
+      <label id="SId"></label>
+    </div>
+    <div class="SPROW">
+      <label for="">Session Date:</label>
+      <label for="" id="SSd"></label>
+    </div>
+    <div class="SPROW">
+      <label for="">Exam Level:</label>
+      <label for="" id="SEl"></label>
+    </div>
+    <div class="SPROW">
+      <label for="">Exam Genre:</label>
+      <label for="" id="SEg"></label>
+    </div>
+    <div class="SPROW">
+      <label for="">Teacher ID:</label>
+      <label for="" id="STId"></label>
+    </div>
+    <div id="AGR">
+      <div class="ExaminerArea-Results1">
+        <label>Accredited Grade Results</label>
+        <input type="number" placeholder="Technique: (15)" id="Res1" class="Results-input">
+        <input type="number" placeholder="Control: (15)" id="Res2" class="Results-input">
+        <input type="number" placeholder="Stanima & Agility: (15)" id="Res3" class="Results-input">
+        <input type="number" placeholder="Musicality: (15)" id="Res4" class="Results-input">
+        <input type="number" placeholder="Interpretation: (10)" id="Res5" class="Results-input">
+      </div>
+      <div class="ExaminerArea-Results2">
+        <input type="number" placeholder="Knowledge: (15)" id="Res6" class="Results-input">
+        <input type="number" placeholder="Performance Skills: (5)" id="Res7" class="Results-input">
+        <input type="number" placeholder="Personal Discipline: (10)" id="Res8" class="Results-input">
+      </div>
+    </div>
+    <div id="NAGR">
+      <div class="FSPO">
+        <label>Foundation/Street/Performance Only</label>
+        <select name="FSPO" id="RPMD">
+          <option value="Not Awarded" selected="">Not Awarded</option>
+          <option value="Pass">Pass</option>
+          <option value="Merit">Merit</option>
+          <option value="Distinction">Distinction</option>
+        </select>
+      </div>
+    </div>
+    <div class="SPROW">
+      <textarea name="ResultsComment" id="RC" cols="30" rows="10" placeholder="Exam Comments...."
+        maxlength="200"></textarea>
+    </div>
+    <button onclick="SumbitResult()">Upload</button>
+    <button onclick="BURP()">Back</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="StudentProfile" id="StudentProfile" style="display: none;">
+    <div id='Trow'>
+      <h1>Examination Feedback</h1>
+    </div>
+    <div id="StudentD">
+      <div id="SDR">
+        <div id="SDRD" style="width: 100%;">
+          <h3>Candidates Name: <span id="SDBN"></span></h3>
+        </div>
+      </div>
+      <div id="SDR">
+        <div id="SDRD">
+          <h3>Genre: <span id="SDBG"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Level: <span id="SDBL"></span></h3>
+        </div>
+      </div>
+      <div id="SDR">
+        <div id="SDRD">
+          <h3>Date: <span id='SDBD'></span></h3>
+        </div>
+                <div id="SDRD">
+                  <h3>ILN: <span id="SDBID"></span></h3>
+                </div>
+      </div>
+    </div>
+
+    <hr noshade>
+
+    <div id="StudentD">
+      <div id="SDR">
+        <div id="SDRD">
+          <h3>Technique: <span id="DBR1"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Control: <span id="DBR2"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Stamina & Agility: <span id="DBR3"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Musicality: <span id="DBR4"></span></h3>
+        </div>
+      </div>
+
+      <div id="SDR">
+        <div id="SDRD">
+          <h3>Interpretation: <span id="DBR5"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Knowledge: <span id="DBR6"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Performance Skill: <span id="DBR7"></span></h3>
+        </div>
+        <div id="SDRD">
+          <h3>Personal Discipline: <span id="DBR8"></span></h3>
+        </div>
+      </div>
+    </div>
+
+    <hr noshade>
+
+    <div class="StudentD">
+      <div class="SDR">
+        <div class="SDRD">
+          <h3 id="SDH3">Examiner Comments:</h3>
+        </div>
+      </div>
+      <div class="SDR">
+        <p id="ExamComment"></p>
+      </div>
+    </div>
+
+    <hr noshade>
+
+    <div class="SDR">
+      <div class="SDRDB" style="width: 50%;">
+        <h3>Examiner ID: <span id="DBEI"></span></h3>
+      </div>
+      <div class="SDRDB" style="width: 25%;">
+        <h3>Total: <span id="DBT"></span></h3>
+      </div>
+      <div class="SDRDB" style="width: 25%;">
+        <h3>Result: <span id="DBR"></span></h3>
+      </div>
+    </div>
+
+    <div class="SPBtn">
+      <button onclick="ProRes()" id="ProBtn">Back</button>
+      <button onclick="printme()" id="ProBtn">Print</button>
+    </div>
+  </div>
+
+  <div id="Cert_Page" class="Stu_Cert_Div" style="display: none;">
+    <div class="Student_info">
+      <h1 class="Cert_Title" id="cert-name">NAME</h1>
+      <h1 class="Cert_Title h11" id="cert-genre">Genre: Level</h1>
+      <h1 class="Cert_title h11" id="cert-result">Result<br><span id="cert-result-mark"></span></h1>
+    </div>
+    <div class="Exam_info">
+      <p id='ExamCertID' >IDT001</p>
+      <p id="ExamCertName" >H Stokes F.IDT</p>
+      <p id="ExamCertDate" >1st April 2018</p>
+    </div>
+    <div class="SPBtn">
+      <button onclick="ProRes()" id="ProBtn">Back</button>
+      <button onclick="printme()" id="ProBtn">Print</button>
+    </div>
+  </div>
+
+  <div id="Cert Results" class="CertResults" style="display: none;">
+    <h1>Select Student</h1>
+    <div class="VR-input">
+      <h3> Enter Student's Session Date and Teacher's ID</h3>
+      <h4> <span id='ResNum'>1.</span> Technique <span id='ResNum'>2.</span> Control <span id='ResNum'>3.</span> Stamina &
+        Agility <span id='ResNum'>4.</span> Musicality<br>
+        <span id='ResNum'>5.</span> Interpretation <span id='ResNum'>6.</span> Knowledge <span id='ResNum'>7.</span>
+        Performance Skill <span id='ResNum'>8.</span> Personal Discipline</h4>
+      <input type="number" placeholder="Sessions Date" id="VRSD" size="5">
+      <input type="number" placeholder="Teachers ID" id="VRTID">
+    </div>
+    <table id="Resultst" class="ResultsTableCss">
+      <thead>
+        <tr id="ResultsTable">
+          <th>Candidates</th>
+          <th>Candidates ID</th>
+          <th>Teacher ID</th>
+          <th>Examiner ID</th>
+          <th>Exam Genre</th>
+          <th>Exam Level</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>Total Score</th>
+          <th>Result</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+    </table>
+    <button onclick="RetreveResults()">Retrieve Results</button>
+    <button onclick="BackMenu()" id="BB">Back</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+  
+  <div id='certmenu' class='certmenu' style='Display: none;'>
+    <h2 id="SP"></h2>
+    <button id='CertMenuBtn'>Print Certificate</button>
+    <button id='FeedbackMenuBtn'>View Feedback</button>
+  </div>
+
+  <div id="printpage" style="display: none;">
+    <section style="width: 25%;">
+      <img id="BDQTLogo" src="./img/bdqt.jpg" alt="BDQTLogo">
+    </section>
+    <section style="width: 75%;">
+      <h3 style="margin-left: 10px;">Examinations and Assessments awarded by Independent
+        Dance Training are accredited by the <br>Board of Dance Qualifications and Training</h3>
+    </section>
+  </div>
+
+  <div id="printmain">
+    <img id="BDQTLogo" src="./img/bdqt.jpg" alt="BDQTLogo">
+    <h3 style="text-align: center; position: relative; top: 50px;">Examinations and Assessments awarded by Independent
+      Dance Training are accredited by the <br>Board of Dance Qualifications and Training</h3>
+    <h3 style="text-align: center; position: relative; top: 50px;"><span id="dis">Disclaimer:</span><br>Perform Data Track
+      and Independent Dance Training can not be held responsible for any incorrect data.</h3>
+    <h3 style="text-align: center; position: relative; top: 50px; margin-bottom: 100px;">&copy; Perfrom Data Track 2020</h3>
+    <h4>V2 Beta</h4>
+  </div>
+
+  <style type="text/css" media="print">
+    @page {
+      size: auto;
+      /* auto is the initial value */
+      margin: 0;
+      /* this affects the margin in the printer settings */
+    }
+  </style>
+
+  <script>
+    var script = document.createElement('script');
+      script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+      script.type = 'text/javascript';
+      document.getElementsByTagName('head')[0].appendChild(script);
+
+      document.getElementById('Main').style.display = "";
+      document.getElementById('teacherLogIn').style.display = "none";
+      document.getElementById('printpage').style.display = "none";
+      document.getElementById('exam').style.display = "none";
+      document.getElementById('Menu').style.display = "none";
+      document.getElementById('Ammend Student').style.display = "none";
+      document.getElementById('Dev-Console').style.display = "none";
+      document.getElementById('exam-menu').style.display = "none";
+      document.getElementById('View Results').style.display = "none";
+      document.getElementById('StudentsProfile').style.display = "none";
+
+      function cleartable() {
+        var table = document.getElementById('Resultst')
+        for (var i = table.rows.length - 1; i > 0; i--) {
+          table.deleteRow(i);
+        }
+        var table1 = document.getElementById('StduentTable')
+        for (var i = table1.rows.length - 1; i > 0; i--) {
+          table1.deleteRow(i);
+        }
+        var table2 = document.getElementById('Resultst')
+        for (var i = table2.rows.length - 1; i > 0; i--) {
+          table2.deleteRow(i);
+        }
+      }
+      
+
+      $('#BB').bind("click", function () {
+        var contents = {}, text;
+        $("#Resultst td").each(function () {
+
+          text = $(this).text();
+
+          if (!(text in contents)) {
+            contents[text] = true;
+          }
+          else {
+            $(this.parentNode).remove();
+          }
+
+        });
+      });
+
+      $(document).ready(function () {
+
+        var ResName, ResID, ResTID, ResEID, ResR, ResC, rescertid;
+        $('#Resultst').on('click', 'tr', function () {
+          document.getElementById('View Results').style.display = 'none';
+          //document.getElementById('printpage').style.display = 'block';
+          document.getElementById('certmenu').style.display = 'block';
+          var date = document.getElementById('VRSD').value;
+          var db = firebase.firestore();
+          var currow = $(this).closest('tr');
+          ResName = currow.find('td:eq(0)').text();
+          ResID = currow.find('td:eq(1)').text();
+          ResTID = currow.find('td:eq(2)').text();
+          ResEID = currow.find('td:eq(3)').text();
+          ResR = currow.find('td:eq(13)').text();
+          ResC = currow.find('td:eq(16)').text();
+          rescertid = currow.find('td:eq(17)').text()
+          document.getElementById('SP').innerHTML = ResName + "'s Profile"
+        })
+
+        $('#CertMenuBtn').on('click', function () {
+          var db = firebase.firestore();
+          var name, date, genre, level, result, mark, examinerID, ExaminerName, resultmark
+          db.collection('Students').doc(rescertid).get().then(function (doc) {
+            var data = doc.data();
+            examinerID = data.Results.Examiner_ID;
+            name = data.Student;
+            genre = data.ExamGenre;
+            level = data.ExamLevel;
+            if (doc.data().Results.Non_Accredited_Exam == "Not Awarded") {
+              result = doc.data().Results.Overall_Results;
+              resultmark = doc.data().Results.TotalScore;
+            } else {
+              result = doc.data().Results.Non_Accredited_Exam;
+            }
+            date = data.SessionDate;
+            db.collection("Examiners").where("ID", "==", examinerID).onSnapshot(function (querySnapshot) {
+              querySnapshot.forEach(function (doc) {
+                ExaminerName = doc.data().Name;
+                console.log(doc.data().Name);
+                //mark
+
+                //date
+                var date_sep = date.split(' / ')
+                var day = date_sep[0]
+                var month = date_sep[1]
+                var year = date_sep[2]
+                ////day formatting
+                if (day == '1' || day == '21' || day == '31') {
+                  day = day + 'st'
+                } else if (day == '2' || day == '22') {
+                  day = day + 'nd'
+                } else if (day == '3' || day == '23') {
+                  day = day + 'rd'
+                } else {
+                  day = day + 'th'
+                }
+
+                ////month formatting
+                if (month == '01') { month = 'January' }
+                if (month == '02') { month = 'Febuary' }
+                if (month == '03') { month = 'March' }
+                if (month == '04') { month = 'April' }
+                if (month == '05') { month = 'May' }
+                if (month == '06') { month = 'June' }
+                if (month == '07') { month = 'July' }
+                if (month == '08') { month = 'August' }
+                if (month == '09') { month = 'September' }
+                if (month == '10') { month = 'October' }
+                if (month == '11') { month = 'Novemeber' }
+                if (month == '12') { month = 'December' }
+
+                var fullDate = day + ' ' + month + ' ' + year
+
+                //Examiners Name
+                var name_sep = ExaminerName.split(' ')
+                console.log(name_sep)
+                var FN = name_sep[0];
+                var SN = name_sep[1];
+                FN = FN.substr(0, 1)
+                var fullName = FN + ' ' + SN
+
+                console.log(fullName)
+
+                //seting vars
+                rm = resultmark + ' Marks'
+                console.log(examinerID)
+                var did = document.getElementById;
+                document.getElementById('cert-name').innerHTML = name;
+                document.getElementById('cert-genre').innerHTML = genre + ": " + level;
+                document.getElementById('cert-result').innerHTML = result + '<br>' + rm;
+                document.getElementById('ExamCertID').innerHTML = examinerID;
+                document.getElementById('ExamCertName').innerHTML = fullName + ' F.IDT';
+                document.getElementById('ExamCertDate').innerHTML = fullDate;
+              })
+            })
+
+          })
+          document.getElementById('certmenu').style.display = 'none';
+          document.getElementById('Cert_Page').style.display = 'block';
+
+        })
+
+        $('#FeedbackMenuBtn').on('click', function () {
+          const db = firebase.firestore();
+          document.getElementById('StudentProfile').style.display = 'block';
+          document.getElementById('printpage').style.display = 'block';
+          document.getElementById('printmain').style.display = 'none';
+          document.getElementById('certmenu').style.display = 'none';
+          db.collection('Students').doc(rescertid).get().then(function (doc) {
+            var data = doc.data();
+            var Rst;
+            if (doc.data().Results.Non_Accredited_Exam == "Not Awarded") {
+              Rst = doc.data().Results.Overall_Results
+            } else {
+              Rst = doc.data().Results.Non_Accredited_Exam
+            }
+            document.getElementById('StudentProfile').style.display = 'block';
+            document.getElementById('View Results').style.display = 'none';
+            document.getElementById('SDBN').innerHTML = data.Student;
+            document.getElementById('SDBID').innerHTML = data.StudentID;
+            document.getElementById('SDBG').innerHTML = data.ExamGenre;
+            document.getElementById('SDBL').innerHTML = data.ExamLevel;
+            document.getElementById('SDBD').innerHTML = data.SessionDate;
+
+            document.getElementById('DBR1').innerHTML = data.Results.Results1;
+            document.getElementById('DBR2').innerHTML = data.Results.Results2;
+            document.getElementById('DBR3').innerHTML = data.Results.Results3;
+            document.getElementById('DBR4').innerHTML = data.Results.Results4;
+            document.getElementById('DBR5').innerHTML = data.Results.Results5;
+            document.getElementById('DBR6').innerHTML = data.Results.Results6;
+            document.getElementById('DBR7').innerHTML = data.Results.Results7;
+            document.getElementById('DBR8').innerHTML = data.Results.Results8;
+
+            document.getElementById('ExamComment').innerHTML = data.Results.Exam_Comments;
+
+            document.getElementById('DBEI').innerHTML = data.Results.Examiner_ID;
+            document.getElementById('DBT').innerHTML = data.Results.TotalScore;
+            document.getElementById('DBR').innerHTML = Rst;
+          })
+        });
+      });
+
+      function PrintCertPage() {
+        document.getElementById('exam-menu').style.display = 'none';
+        document.getElementById('Cert_Page').style.display = 'block';
+      }
+
+      function ProRes() {
+        document.getElementById('StudentProfile').style.display = 'none';
+        document.getElementById('View Results').style.display = 'block';
+        document.getElementById('printmain').style.display = 'block';
+        document.getElementById('printpage').style.display = 'none';
+        document.getElementById('SDBN').innerHTML = '';
+        document.getElementById('SDBID').innerHTML = '';
+        document.getElementById('SDBG').innerHTML = '';
+        document.getElementById('SDBL').innerHTML = '';
+        document.getElementById('SDBD').innerHTML = '';
+
+        document.getElementById('DBR1').innerHTML = '';
+        document.getElementById('DBR2').innerHTML = '';
+        document.getElementById('DBR3').innerHTML = '';
+        document.getElementById('DBR4').innerHTML = '';
+        document.getElementById('DBR5').innerHTML = '';
+        document.getElementById('DBR6').innerHTML = '';
+        document.getElementById('DBR7').innerHTML = '';
+        document.getElementById('DBR8').innerHTML = '';
+
+        document.getElementById('ExamComment').innerHTML = '';
+
+        document.getElementById('DBEI').innerHTML = '';
+        document.getElementById('DBT').innerHTML = '';
+        document.getElementById('DBR').innerHTML = '';
+        var did = document.getElementById.bind;
+        document.getElementById('cert-name').innerHTML = '';
+        document.getElementById('cert-genre').innerHTML = '';
+        document.getElementById('cert-result').innerHTML = '';
+        document.getElementById('Cert_Page').style.display = 'none';
+      }
+
+      function printme() {
+        try {
+          // Print for Safari browser
+          document.execCommand('print', false, null)
+        } catch {
+          window.print()
+        }
+      }
+
+      var DBID = "";
+      var DBName = "";
+      var DBPass = "";
+      var DBStudent;
+      var DBSID = "test";
+      var Results;
+      var DBMember;
+      var DBCheck = false;
+      var SearchSN;
+      var SearchID;
+      var DBCC = false;
+      var studentexists = false;
+      var DS;
+      var DSID;
+      var DSSD;
+      var DSEL;
+      var DSEG;
+      var DSTID;
+      var TSN;
+      var TSID;
+      var TEL;
+      var TEG;
+      var TTID;
+      var DBAdmin;
+
+      function login() {
+        var enteredID = document.getElementById('MyUsername').value;
+        var enteredPass = document.getElementById('MyPassword').value;
+        var db = firebase.firestore();
+        firebase.auth().signInAnonymously().catch(function (error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
+        });
+        db.collection("Teachers Acounts").where("ID", "==", enteredID).where("Password", "==", enteredPass).onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            DBCheck = true;
+            DBID = doc.data().ID;
+            DBName = doc.data().Name;
+            DBPass = doc.data().Password;
+            DBMember = doc.data().Member;
+            if (DBMember == true) {
+              document.getElementById('Main').style.display = "none";
+              document.getElementById('Menu').style.display = "block";
+              var Welcome = "Welcome " + DBName;
+              document.getElementById('WelcomePage').innerHTML = Welcome;
+            } else {
+              var memberError = "Please contact head office as your membership status has been queried.";
+              document.getElementById('Try Again').innerHTML = memberError;
+            }
+          });
+        });
+        db.collection("Examiners").where("ID", "==", enteredID).onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            DBCheck == true;
+            DBID = doc.data().ID;
+            DBName = doc.data().Name;
+            Is_Admin = doc.data().Admin;
+            if (enteredID == DBID && enteredPass == "IDT2020") {
+              document.getElementById('Main').style.display = "none";
+              document.getElementById('exam-menu').style.display = "block";
+              var Welcome = "Welcome " + DBName;
+              document.getElementById('WelcomePage').innerHTML = Welcome;
+            } else {
+              window.alert("tryagain");
+            }
+          });
+        });
+        db.collection("Dev").where("ID", "==", enteredID).where("Password", "==", enteredPass).onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            DBID = doc.data().ID;
+            DBName = doc.data().Name;
+            DBPass = doc.data().Password;
+            if (enteredID == DBID && enteredPass == DBPass) {
+              document.getElementById('Main').style.display = "none";
+              document.getElementById('Dev-Console').style.display = "block";
+              var Welcome = "Welcome " + DBName;
+              document.getElementById('WelcomePage').innerHTML = Welcome;
+            } else {
+              window.alert("tryagain");
+            }
+          });
+        });
+        if (DBCheck == false) {
+          var TA = "Try again or contact head office for support.";
+          document.getElementById('Try Again').innerHTML = TA;
+        }
+      }
+
+      function SearchStudent() {
+        var table = document.getElementById('StduentTable')
+        for (var i = table.rows.length - 1; i > 0; i--) {
+          table.deleteRow(i);
+        }
+        var db = firebase.firestore();
+        CRSD = document.getElementById('RSD').value;
+        CRTID = document.getElementById('RTID').value;
+
+        db.collection("Students").where('SessionDate', '==', CRSD).where('TeacherID', '==', CRTID).orderBy("Students Surname", "asc").onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            var data = doc.data();
+
+            var id = doc.id;
+
+            student = data.Student;
+            id = data.StudentID;
+            genre = data.ExamGenre;
+            level = data.ExamLevel;
+            var Exam = data.Result;
+            var ResBtn = '<button class="btn" onclick="URP()">Upload Results</button>';
+            if (Exam == true || Exam == true) {
+              ResBtn = '<label id="ResBtn">Results Uploaded</label>'
+            }
+
+            var content = '';
+            content += '<tr>';
+            content += '<td id="name">' + data.Student + '</td>';
+            content += '<td id="id">' + data.StudentID + '</td>';
+            content += '<td id="eg">' + data.ExamGenre + '</td>';
+            content += '<td id="el">' + data.ExamLevel + '</td>';
+            content += '<td id="uid">' + doc.id + '</td>';
+            content += '<td>' + ResBtn + '</td>';
+            $('#StduentTable').append(content);
+
+          })
+        });
+
+        function download_csv(csv, filename) {
+          var csvFile;
+          var downloadLink;
+
+          // CSV FILE
+          csvFile = new Blob([csv], {
+            type: "text/csv"
+          });
+
+          // Download link
+          downloadLink = document.createElement("a");
+
+          // File name
+          downloadLink.download = filename;
+
+          // We have to create a link to the file
+          downloadLink.href = window.URL.createObjectURL(csvFile);
+
+          // Make sure that the link is not displayed
+          downloadLink.style.display = "none";
+
+          // Add the link to your DOM
+          document.body.appendChild(downloadLink);
+
+          // Lanzamos
+          downloadLink.click();
+        }
+
+        function export_table_to_csv(html, filename) {
+          var csv = [];
+          var rows = document.querySelectorAll("#StduentTable tr");
+
+          for (var i = 0; i < rows.length; i++) {
+            var row = [],
+              cols = rows[i].querySelectorAll("td, th");
+
+            for (var j = 0; j < cols.length; j++)
+              row.push(cols[j].innerText);
+
+            csv.push(row.join(","));
+          }
+
+          // Download CSV
+          download_csv(csv.join("\n"), filename);
+        }
+
+        document.getElementById("Download").addEventListener("click", function () {
+          var html = document.querySelector("#StduentTable").outerHTML;
+          export_table_to_csv(html, "table.csv");
+        });
+      }
+
+
+      var CRSD;
+      var CRTID;
+      rowdata = [student, id, genre, level]
+
+      var student;
+      var id;
+      var genre;
+      var level;
+      function BURP() {
+        document.getElementById('RPMD').value = "Not Awarded";
+        document.getElementById('URP').style.display = "none";
+        document.getElementById('exam').style.display = "block";
+        document.getElementById('SName').innerHTML = "";
+        document.getElementById('SId').innerHTML = "";
+        document.getElementById('SSd').innerHTML = "";
+        document.getElementById('SEl').innerHTML = "";
+        document.getElementById('SEg').innerHTML = "";
+        document.getElementById('STId').innerHTML = "";
+        document.getElementById('StudentPage').innerHTML = "";
+        var table = document.getElementById('StduentTable')
+        for (var i = table.rows.length - 1; i > 0; i--) {
+          table.deleteRow(i);
+        }
+        var db = firebase.firestore();
+
+        db.collection("Students").where('SessionDate', '==', CRSD).where('TeacherID', '==', CRTID).orderBy("Students Surname", "asc").onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            var data = doc.data();
+            celldocid = doc.id;
+            student = data.Student;
+            id = data.StudentID;
+            genre = data.ExamGenre;
+            level = data.ExamLevel;
+            var Exam = data.Result;
+            var ResBtn = '<button class="btn" onclick="URP()">Upload Results</button>';
+            if (Exam == true || Exam == true) {
+              ResBtn = '<label id="ResBtn">Results Uploaded</label>'
+            }
+
+            var content = '';
+            content += '<tr>';
+            content += '<td id="name">' + data.Student + '</td>';
+            content += '<td id="id">' + data.StudentID + '</td>';
+            content += '<td id="eg">' + data.ExamGenre + '</td>';
+            content += '<td id="el">' + data.ExamLevel + '</td>';
+            content += '<td id="uid">' + celldocid + '</td>';
+            content += '<td>' + ResBtn + '</td>';
+            $('#StduentTable').append(content);
+
+          })
+        });
+      }
+      var cel1;
+      var cel2;
+      var cel3;
+      var cel4;
+      var cel5;
+      var celldocid;
+
+      $('#StduentTable').on('click', '.btn', function () {
+        var currow = $(this).closest('tr');
+        cel1 = currow.find('td:eq(0)').text();
+        cel2 = currow.find('td:eq(1)').text();
+        cel3 = currow.find('td:eq(2)').text();
+        cel4 = currow.find('td:eq(3)').text();
+        cel5 = currow.find('td:eq(4)').text();
+        var table = document.getElementById("StduentTable");
+
+        var CRSD = document.getElementById('RSD').value;
+        var CRTID = document.getElementById('RTID').value;
+        document.getElementById('URP').style.display = "block";
+        document.getElementById('exam').style.display = "none";
+        var db = firebase.firestore();
+        db.collection("Students").doc(cel5).get().then(function (doc) {
+          var data = doc.data();
+          var text = data.Student + "'s Page.";
+          DS = data.Student;
+          DSID = data.StudentID;
+          DSSD = data.SessionDate;
+          DSEL = data.ExamLevel;
+          DSEG = data.ExamGenre;
+          DSTID = data.TeacherID;
+          document.getElementById('StudentPage').innerHTML = text;
+          document.getElementById('SName').innerHTML = DS;
+          document.getElementById('SId').innerHTML = DSID;
+          document.getElementById('SSd').innerHTML = DSSD;
+          document.getElementById('SEl').innerHTML = DSEL;
+          document.getElementById('SEg').innerHTML = DSEG;
+          document.getElementById('STId').innerHTML = DSTID;
+        })
+      })
+
+      function Profile() {
+        document.getElementById('StudentsProfile').style.display = 'block';
+        document.getElementById('exam-menu').style.display = 'none';
+      }
+
+      var resultID = []
+
+      function RetreveResults() {
+        var table = document.getElementById("Resultst");
+        //or use :  var table = document.all.tableid;
+        for (var i = table.rows.length - 1; i > 0; i--) {
+          table.deleteRow(i);
+        }
+        var db = firebase.firestore();
+        var RSD = document.getElementById('VRSD').value;
+        var RTID = document.getElementById('VRTID').value;
+        firebase.firestore().collection("Students").where("SessionDate", "==", RSD).where("TeacherID", "==", RTID)
+          .orderBy("Students Surname", "asc")
+          .onSnapshot(function (onSnapshot) {
+            onSnapshot.forEach(function (doc) {
+              var id = doc.id;
+              //resultID.push(id)
+              var content = '';
+              var Rst;
+              if (doc.data().Results.Non_Accredited_Exam == "Not Awarded") {
+                Rst = doc.data().Results.Overall_Results
+              } else {
+                Rst = doc.data().Results.Non_Accredited_Exam
+              }
+              var student_ID = doc.data() + ' ' + id;
+              console.log(student_ID)
+              content += '<tr>';
+              content += '<td>' + doc.data().Student + '</td>';
+              content += '<td>' + doc.data().StudentID + '</td>';
+              content += '<td>' + doc.data().TeacherID + '</td>';
+              content += '<td>' + doc.data().Results.Examiner_ID + '</td>';
+              content += '<td>' + doc.data().ExamGenre + '</td>';
+              content += '<td>' + doc.data().ExamLevel + '</td>';
+              content += '<td>' + doc.data().Results.Results1 + '</td>';
+              content += '<td>' + doc.data().Results.Results2 + '</td>';
+              content += '<td>' + doc.data().Results.Results3 + '</td>';
+              content += '<td>' + doc.data().Results.Results4 + '</td>';
+              content += '<td>' + doc.data().Results.Results5 + '</td>';
+              content += '<td>' + doc.data().Results.Results6 + '</td>';
+              content += '<td>' + doc.data().Results.Results7 + '</td>';
+              content += '<td>' + doc.data().Results.Results8 + '</td>';
+              content += '<td>' + doc.data().Results.TotalScore + '</td>';
+              content += '<td>' + Rst + '</td>';
+              content += '<td>' + doc.data().Results.Exam_Comments + '</td>';
+              content += '<td style="display: none;">' + id + '</td>';
+              $('#Resultst').append(content);
+            })
+          });
+        var mylist = $('#Resultst');
+        var listitems = mylist.find('tr');
+        listitems.sort(function (a, b) {
+          return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+        })
+        $.each(listitems, function (idx, itm) { mylist.append(itm); });
+      }
+
+
+
+      function UploadResultspage() {
+        document.getElementById('exam').style.display = "block";
+        document.getElementById('exam-menu').style.display = "none";
+        var date = document.getElementById('RSD')
+
+        function checkValue(str, max) {
+          if (str.charAt(0) !== '0' || str == '00') {
+            var num = parseInt(str);
+            if (isNaN(num) || num <= 0 || num > max) num = 1;
+            str = num > parseInt(max.toString().charAt(0)) && num.toString().length == 1 ? '0' + num : num.toString();
+          };
+          return str;
+        };
+
+        date.addEventListener('input', function (e) {
+          this.type = 'text';
+          var input = this.value;
+          if (/\D\/$/.test(input)) input = input.substr(0, input.length - 3);
+          var values = input.split('/').map(function (v) {
+            return v.replace(/\D/g, '')
+          });
+          if (values[1]) values[1] = checkValue(values[1], 12);
+          if (values[0]) values[0] = checkValue(values[0], 31);
+          var output = values.map(function (v, i) {
+            return v.length == 2 && i < 2 ? v + ' / ' : v;
+          });
+          this.value = output.join('').substr(0, 14);
+        });
+      }
+
+      function PrintResultsPage() {
+        document.getElementById('View Results').style.display = "block";
+        document.getElementById('exam-menu').style.display = "none";
+        var date = document.getElementById('VRSD')
+
+        function checkValue(str, max) {
+          if (str.charAt(0) !== '0' || str == '00') {
+            var num = parseInt(str);
+            if (isNaN(num) || num <= 0 || num > max) num = 1;
+            str = num > parseInt(max.toString().charAt(0)) && num.toString().length == 1 ? '0' + num : num.toString();
+          };
+          return str;
+        };
+
+        date.addEventListener('input', function (e) {
+          this.type = 'text';
+          var input = this.value;
+          if (/\D\/$/.test(input)) input = input.substr(0, input.length - 3);
+          var values = input.split('/').map(function (v) {
+            return v.replace(/\D/g, '')
+          });
+          if (values[1]) values[1] = checkValue(values[1], 12);
+          if (values[0]) values[0] = checkValue(values[0], 31);
+          var output = values.map(function (v, i) {
+            return v.length == 2 && i < 2 ? v + ' / ' : v;
+          });
+          this.value = output.join('').substr(0, 14);
+        });
+      }
+
+      function BackMenu() {
+        document.getElementById('exam-menu').style.display = "block";
+        document.getElementById('View Results').style.display = "none";
+        document.getElementById('exam').style.display = "none";
+        cleartable()
+      }
+
+      function SumbitResult() {
+        var CRSD = document.getElementById('RSD').value;
+        var CRTID = document.getElementById('RTID').value;
+        var dataIn = false
+        var db = firebase.firestore();
+        var r1 = document.getElementById('Res1').value;
+        var r2 = document.getElementById('Res2').value;
+        var r3 = document.getElementById('Res3').value;
+        var r4 = document.getElementById('Res4').value;
+        var r5 = document.getElementById('Res5').value;
+        var r6 = document.getElementById('Res6').value;
+        var r7 = document.getElementById('Res7').value;
+        var r8 = document.getElementById('Res8').value;
+        var ExamComment = document.getElementById('RC').value;
+        var NAW = document.getElementById('RPMD').value;
+        var totalscore =
+          document.getElementById('Res1').valueAsNumber +
+          document.getElementById('Res2').valueAsNumber +
+          document.getElementById('Res3').valueAsNumber +
+          document.getElementById('Res4').valueAsNumber +
+          document.getElementById('Res5').valueAsNumber +
+          document.getElementById('Res6').valueAsNumber +
+          document.getElementById('Res7').valueAsNumber +
+          document.getElementById('Res8').valueAsNumber;
+        var tot2 = totalscore;
+        if (NAW == "Pass" || NAW == "Merit" || NAW == "Distinction") {
+          r1 = 0;
+          r2 = 0;
+          r3 = 0;
+          r4 = 0;
+          r5 = 0;
+          r6 = 0;
+          r7 = 0;
+          r8 = 0;
+          r9 = 0;
+          r10 = 0;
+          tot2 = 0;
+        }
+        var OverallResult = "Not Awarded";
+        if (tot2 > 90) {
+          OverallResult = "Distinction with Honours"
+        }
+        if (tot2 > 76 && tot2 <= 89) {
+          OverallResult = "Distinction"
+        }
+        if (tot2 > 57 && tot2 <= 76) {
+          OverallResult = "Merit"
+        }
+        if (tot2 > 42 && tot2 <= 57) {
+          OverallResult = "Pass"
+        }
+        if (tot2 <= 42) {
+          OverallResult = "Not Awarded"
+        }
+        //=IF(T9>89,"Distinction with Honours",IF(T9>76,"Distinction",IF(T9>58,"Merit",IF(T9>43,"Pass",IF(T9>42,"Not Awarded")))))
+        dataIn = true
+        db.collection("Students").doc(cel5).update({
+          "Results.Results1": r1,
+          "Results.Results2": r2,
+          "Results.Results3": r3,
+          "Results.Results4": r4,
+          "Results.Results5": r5,
+          "Results.Results6": r6,
+          "Results.Results7": r7,
+          "Results.Results8": r8,
+          "Results.TotalScore": tot2,
+          "Results.Exam_Comments": ExamComment,
+          "Results.Non_Accredited_Exam": NAW,
+          "Results.Examiner_ID": DBID,
+          "Results.Overall_Results": OverallResult,
+          "Result": true
+        })
+        if (dataIn = true) {
+          document.getElementById('REG').value = "";
+          document.getElementById('REL').value = "";
+          document.getElementById('RSD').value = "";
+          document.getElementById('RCID').value = "";
+          document.getElementById('RTID').value = "";
+          document.getElementById('RC').value = "";
+          document.getElementById('Res1').value = "";
+          document.getElementById('Res2').value = "";
+          document.getElementById('Res3').value = "";
+          document.getElementById('Res4').value = "";
+          document.getElementById('Res5').value = "";
+          document.getElementById('Res6').value = "";
+          document.getElementById('Res7').value = "";
+          document.getElementById('Res8').value = "";
+        }
+      }
+
+      function SumbitStudnetMenu() {
+        document.getElementById('Ammend Student').style.display = "none";
+        document.getElementById('Menu').style.display = "none";
+        document.getElementById('teacherLogIn').style = "block";
+        var date = document.getElementById('SD')
+
+        function checkValue(str, max) {
+          if (str.charAt(0) !== '0' || str == '00') {
+            var num = parseInt(str);
+            if (isNaN(num) || num <= 0 || num > max) num = 1;
+            str = num > parseInt(max.toString().charAt(0)) && num.toString().length == 1 ? '0' + num : num.toString();
+          };
+          return str;
+        };
+
+        date.addEventListener('input', function (e) {
+          this.type = 'text';
+          var input = this.value;
+          if (/\D\/$/.test(input)) input = input.substr(0, input.length - 3);
+          var values = input.split('/').map(function (v) {
+            return v.replace(/\D/g, '')
+          });
+          if (values[1]) values[1] = checkValue(values[1], 12);
+          if (values[0]) values[0] = checkValue(values[0], 31);
+          var output = values.map(function (v, i) {
+            return v.length == 2 && i < 2 ? v + ' / ' : v;
+          });
+          this.value = output.join('').substr(0, 14);
+        });
+      }
+
+      function ChangeStudnetMenu() {
+        document.getElementById('Ammend Student').style.display = "block";
+        document.getElementById('teacherLogIn').style.display = "none";
+        document.getElementById('exam').style.display = "none";
+        document.getElementById('Menu').style.display = "none";
+      }
+
+      function SumbitStudnet() {
+        var ESD = document.getElementById('SD').value;
+        var ESFN = document.getElementById('SFN').value;
+        var ESSN = document.getElementById('SSN').value;
+        var ESID = document.getElementById('SID').value;
+        var EEL = document.getElementById('EL').value;
+        var EEG = document.getElementById('EG').value;
+        if ((ESD != '') && (ESFN != '') && (ESSN != '') && (ESID != '') && (EEL != 'Exam Level') && (EEG != 'Exam Genre')) {
+          var Sname = ESFN + " " + ESSN;
+          var tech = DBID;
+          var db = firebase.firestore();
+          db.collection("Students").add({
+            'Result': false,
+            'Student': Sname,
+            'Students First Name': ESFN,
+            'Students Surname': ESSN,
+            'SessionDate': ESD,
+            'StudentID': ESID,
+            'ExamLevel': EEL,
+            'ExamGenre': EEG,
+            'TeacherID': tech
+            //'Results': {'Result 1: ': "", 'Result 2: ': "", 'Result 3: ': "", 'Result 4: ': "", 'Result 5: ': "",
+            //'Result 6: ': "", 'Result 7: ': "", 'Result 8: ': "", 'Result 9: ': "", 'Result 10: ': ""}
+          })
+            .then(function (docRef) {
+              var content = '';
+              content += '<tr>';
+              content += '<td>' + ESFN + '</td>';
+              content += '<td>' + ESSN + '</td>';
+              content += '<td>' + EEG + '</td>';
+              content += '<td>' + EEL + '</td>';
+              $('#CheckFrom').append(content);
+            })
+            .catch(function (error) {
+              console.error("Error adding document: ", error);
+            });
+          document.getElementById('SFN').value = "";
+          document.getElementById('SSN').value = "";
+          document.getElementById('SID').value = "";
+          document.getElementById('EG').value = "Exam Genre";
+          document.getElementById('EL').value = "Exam Level";
+        } else {
+          window.alert("Please make sure you have entered all the entries correctly")
+        }
+      }
+
+      function Updatestudent() {
+        var docID;
+        var UpdateID;
+        var db = firebase.firestore();
+        var SearchStudent = document.getElementById('Search Name').value;
+        var UID = document.getElementById('AddInfo').value;
+        db.collection("Students").where("Student", "==", SearchStudent).onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            if (doc.exists) {
+              db.collection('Students').doc(doc.id).update({
+                StudentID: UID
+              });
+            } else {
+            }
+          });
+        });
+
+        document.getElementById('AddInfo').value = "";
+        document.getElementById('Search Name').value = "";
+        document.getElementById('Res1').value = "";
+        document.getElementById('Res2').value = "";
+        document.getElementById('Res3').value = "";
+        document.getElementById('Res4').value = "";
+        document.getElementById('Res5').value = "";
+        document.getElementById('Res6').value = "";
+        document.getElementById('Res7').value = "";
+        document.getElementById('Res8').value = "";
+        document.getElementById('Res9').value = "";
+        document.getElementById('Res10').value = "";
+      }
+
+      function logout() {
+        document.getElementById('Main').style.display = "block";
+        document.getElementById('teacherLogIn').style.display = "none";
+        document.getElementById('exam').style.display = "none";
+        document.getElementById('Menu').style.display = "none";
+        document.getElementById('Ammend Student').style.display = "none";
+        document.getElementById('Dev-Console').style.display = "none";
+        document.getElementById('exam-menu').style.display = "none";
+        document.getElementById('View Results').style.display = "none";
+        document.getElementById('MyUsername').value = "";
+        document.getElementById('MyPassword').value = "";
+        cleartable()
+      }
+
+      function download_csv(csv, filename) {
+        var csvFile;
+        var downloadLink;
+
+        // CSV FILE
+        csvFile = new Blob([csv], {
+          type: "text/csv"
+        });
+
+        // Download link
+        downloadLink = document.createElement("a");
+
+        // File name
+        downloadLink.download = filename;
+
+        // We have to create a link to the file
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+
+        // Make sure that the link is not displayed
+        downloadLink.style.display = "none";
+
+        // Add the link to your DOM
+        document.body.appendChild(downloadLink);
+
+        // Lanzamos
+        downloadLink.click();
+      }
+
+      function export_table_to_csv(html, filename) {
+        var csv = [];
+        var rows = document.querySelectorAll("#Resultst tr");
+
+        for (var i = 0; i < rows.length; i++) {
+          var row = [],
+            cols = rows[i].querySelectorAll("td, th");
+
+          for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+
+          csv.push(row.join(","));
+        }
+
+        // Download CSV
+        download_csv(csv.join("\n"), filename);
+      }
+
+      document.getElementById("DownloadRTbl").addEventListener("click", function () {
+        var html = document.querySelector("#Resultst").outerHTML;
+        export_table_to_csv(html, "table.csv");
+      });
+  </script>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/tableHTMLExport.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDwHndTdBtbsXM4jvrNLqS1I4t_NtD7yYo",
+      authDomain: "idtapp.firebaseapp.com",
+      databaseURL: "https://idtapp.firebaseio.com",
+      projectId: "idtapp",
+      storageBucket: "idtapp.appspot.com",
+      messagingSenderId: "227424650135",
+      appId: "1:227424650135:web:41885503a0476487437ad2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const collectionRef = firebase.firestore().collection('Students');
+
+    const fireexport = 'node-firestore-import-export';
+
+    const firestoreService = ('firestore-export-import');
+    const serviceAccount = ('./serviceAccountKey.json');
+  </script>
+
+</body>
+
+</html>

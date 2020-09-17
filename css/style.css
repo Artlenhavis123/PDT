@@ -1,0 +1,629 @@
+    #certmenu {
+      width: 75%;
+      margin: 0px auto;
+      margin-top: 100px;
+      margin-bottom: 75px;
+      padding: 20px;
+    }
+
+    .SPBtn {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    #certmenu button {
+      align-self: auto;
+      background: red;
+      color: white;
+      border: 0px;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 25px auto;
+      display: block;
+      width: 20%;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #ProBtn {
+    margin-top: 100px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    margin: auto;
+    padding: 10px;
+    margin-left: 5px;
+    width: 40%;
+    }
+
+    @media print { 
+      #ProBtn { 
+        visibility: hidden; 
+      }
+      #printmain {
+        visibility: hidden;
+      }
+    }
+
+    #printpage section {
+      text-align: center;
+      display: inline;
+      float: left;
+      margin-top: 20px;
+    }
+
+    #printpage section img {
+      margin: auto;
+    }
+
+    #SDH3 {
+      text-align: left;
+    }
+
+    .SDRDB {
+      display: inline;
+      float: left;
+      text-align: left;
+    }
+
+    .StudentProfile {
+      width: 75%;
+      margin: auto;
+
+      color: red;
+    }
+
+    .StudentProfile span {
+      color: black;
+    }
+
+    .StudentProfile p {
+      text-align: left;
+      color: black;
+    }
+
+    #Trow {
+      width: 100%;
+      margin: auto;
+      display: block;
+    }
+
+    #Trow h1 {
+      float: left;
+      margin-left: 10px;
+    }
+
+    #Trow img {
+      margin-top: 20px;
+      margin-right: 15px;
+      float: right;
+      max-height: 100px;
+      max-width: 100px;
+    }
+
+    #StudentD {
+      margin-top: 30px;
+      display: block;
+      width: 100%;
+    }
+
+    #SDR {
+      display: inline-block;
+      width: 100%;
+    }
+
+    #SDRD {
+      text-align: left;
+      display: block;
+      width: 50%;
+      float: left;
+    }
+
+    .Cert_Title {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .Stu_Cert_Div {
+                margin: auto;
+                margin-top: 393px;
+            }
+
+            .Stu_Cert_Div p {
+              margin: 0 0 0 75px;
+            }
+
+            .Exam_info {
+                margin-left: 50px;
+            }
+
+            .Exam_info {
+              margin-top: 27px;
+              margin-left: 85px;
+              text-align: left;
+            }
+            .Student_info {
+              margin-left: 3.9cm;
+                        }
+
+            .Student_info h1 {
+              width: 100%;
+            }
+
+            .h11 {
+              margin-top: 60px;
+            }
+
+
+
+
+    /* <div class="Examiner-input">
+              <h3> Enter Student (Make Sure To Click Search Before Submitting Results)</h3>
+              <input type="text" placeholder="Sessions Date (DD/MM/YYYY)" id="RSD" size="5" name='Date'>
+              <input type="number" placeholder="Candidates ID" id="RCID">
+              <input type="number" placeholder="Teachers ID" id="RTID">
+          </div>
+          <select name="ExamGenre" id="REG">
+                  <option value="Exam Genre" selected="" disabled="" hidden="">Exam Genre</option>
+                  <option value="CheerDance">Cheer Dance</option>
+                  <option value="ClassicalBallet">Classical Ballet</option>
+                  <option value="Contempary">Contemporary</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Lyrical">Lyrical</option>
+                  <option value="ModernJazz">Modern Jazz</option>
+                  <option value="MusicalTheatre">Musical Theatre</option>
+                  <option value="Singing">Singing</option>
+                  <option value="StreetDance">Street Dance</option>
+                  <option value="Tap">Tap</option>
+          </select>
+          <select name="ExamLevel" id="REL">
+                  <option value="Exam Level" selected="" disabled="" hidden="">Exam Level</option>
+                  <option value="Introductory">Introductory</option>
+                  <option value="Primary Level">Primary Level</option>
+                  <option value="Grade One">Grade One</option>
+                  <option value="Garde Two">Grade Two</option>
+                  <option value="Grade Three">Grade Three</option>
+                  <option value="Grade Four">Grade Four</option>
+                  <option value="Grade Five">Grade Five</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced Foundation">Advanced Foundation</option>
+                  <option value="Advanced One">Advanced One</option>
+                  <option value="Advanced Two">Advanced Two</option>
+                  <option value="CDTL Pratical Assessment">CDTL Pratical Assessment</option>
+                  <option value="Licenciate">Licenciate</option>
+                  <option value="Fellowship">Fellowship</option>
+                  <option value="Bronze Medal">Bronze Medal</option>
+                  <option value="Silver Medal">Silver Medal</option>
+                  <option value="Gold Medal">Gold Medal</option>
+                  <option value="First Performer Star">First Performer Star</option>
+                  <option value="Second Performer Star">Second Performer Star</option>
+                  <option value="Third Performer Star">Third Performer Star</option>
+                  <option value="Shield">Shield</option>
+                  <option value="Cup">Cup</option>
+                  <option value="Patrons Award">Patrons Award</option>
+                  <option value="Memorail Award">Memorail Award</option>
+          </select>
+          <div class="Examiner-input-CS">
+              <h3> Candidate In System </h3>
+              <input type="text" placeholder="Candidates Status" id="Candidates Status" readonly="">
+              <input type="text" id="Candidates DBName" placeholder="Candidates Name" readonly="">
+          </div>
+      </div>
+      <div class="ExaminerArea-Results1">
+          <label>Accredited Grade Results</label>
+          <input type="number" placeholder="1A:" id="Res1" class="Results-input">
+          <input type="number" placeholder="1B:" id="Res2" class="Results-input">
+          <input type="number" placeholder="1C:" id="Res3" class="Results-input">
+          <input type="number" placeholder="1D:" id="Res4" class="Results-input">
+          <input type="number" placeholder="1E:" id="Res5" class="Results-input">
+      </div>
+      <div class="ExaminerArea-Results2">
+          <input type="number" placeholder="2A:" id="Res6" class="Results-input">
+          <input type="number" placeholder="2B:" id="Res7" class="Results-input">
+          <input type="number" placeholder="2C:" id="Res8" class="Results-input">
+          <input type="number" placeholder="2D:" id="Res9" class="Results-input">
+          <input type="number" placeholder="2E:" id="Res10" class="Results-input">
+      </div>
+      <textarea name="ResultsComment" id="RC" cols="30" rows="10" placeholder="Exam Comments...." maxlength="200"></textarea>
+      <div class="FSPO">
+          <label>Foundation/Street/Performance Only</label>
+          <select name="FSPO" id="RPMD">
+                  <option value="Not Awarded" selected="">Not Awarded</option>
+                  <option value="Pass">Pass</option>
+                  <option value="Merit">Merit</option>
+                  <option value="Distinction">Distinction</option>
+          </select>
+      </div>
+*/
+
+#ResNum {
+  color: red;
+  font-weight: bold;
+}
+
+#ResBtn {
+  color: Grey;
+  font-weight: bold;
+}
+
+      textarea {
+        border-radius: 5px;
+        border: 1px red solid;
+      }
+
+    body {
+      background-image: url('../img/7tDoyoY.jpg');
+      padding: center;
+      margin-top: 125px;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input,
+    button,
+    select,
+    textarea,
+    table {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    table{
+      margin: auto;
+      margin-bottom: 20px;
+      text-align: center;
+      display: table;
+    }
+
+  td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+
+    .CheckStudent form {
+      background: red;
+      color: #fff;
+      border-radius: 15px;
+      max-width: 100%;
+      height: auto;
+      margin: 25px auto;
+      padding: 20px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .Examiner-input input,
+    .ViewResults input {
+      vertical-align: middle;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      margin-left: 7%;
+      width: 20%;
+      height: 30px;
+    }
+
+    .ExaminerArea-results1 input,
+    .ExaminerArea-results2 input,
+    .Results-form2 input,
+    .Results-form1 input {
+      vertical-align: middle;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      margin: 5px 50px 5px 0;
+      padding: 5px;
+      margin-left: 7%;
+      width: 15%;
+      height: 30px;
+    }
+
+    .ExaminerArea-results1 label,
+    .Examiner-input h3,
+    .Examiner-input-cs h3,
+    .RFSPO h3 {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .Examiner-input-cs input,
+    .VR-RD input {
+      vertical-align: middle;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      margin: 5px 50px 5px 0;
+      padding: 10px;
+      margin-left: 7%;
+      width: 20%;
+      height: 30px;
+    }
+
+    .Examiner-div select,
+    .ViewResults select {
+      vertical-align: middle;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      margin: 5px 50px 5px 0;
+      padding: 10px;
+      margin-left: 7%;
+      width: 20%;
+      height: 30px;
+    }
+
+    .Examiner-div textarea,
+    .ViewResults textarea {
+      vertical-align: middle;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      margin-left: 7%;
+      max-width: 77%;
+      width: 77%;
+      max-height: 15%;
+      height: 15%;
+    }
+
+    .main-div {
+      width: 25%;
+      margin: 0px auto;
+      margin-top: 45px;
+      padding: 20px;
+    }
+
+    .main-div img {
+      margin-left: 300px;
+    }
+
+    .Examiner-menu-div {
+      width: 25%;
+      margin: 75px auto;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .teacherLogedin-div,
+    .Examiner-div {
+      width: 75%;
+      margin: 0px auto;
+      margin-top: 45px;
+      padding: 20px;
+    }
+
+    .AmendStudent-div {
+      width: 50%;
+      margin: 0px auto;
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .TeacherMenu-div {
+      width: 50%;
+      margin: 0px auto;
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .AmendStudent-div label {
+      display: inline-block;
+      margin: 0px auto;
+      padding-bottom: 5px;
+      margin-left: 12.5%;
+      margin-right: 12.5%;
+    }
+
+    .teacherLogedin-div {
+      margin: 0px auto;
+      margin-top: 100px;
+      width: 75%;
+      padding: 20px;
+    }
+
+    .teacherLogedin-div label {
+      display: block;
+      margin: 5px 10px 5px 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .teacherLogedin-div h3 {
+      display: block;
+    }
+
+    .teacherLogedin-div input,
+    select {
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      margin: 5px 10px 5px 5px;
+      padding: 10px;
+      width: 90%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .StudentsName {
+      display: inline;
+      float: left;
+      width: 32%;
+    }
+
+    .main-div input {
+      display: inline-flex;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      padding: 15px;
+      outline: none;
+      width: 100%;
+      margin-bottom: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .AmendStudent-div input {
+      display: inline-block;
+      border: 1px solid red;
+      border-radius: 5px;
+      background: #fff;
+      padding: 15px;
+      outline: none;
+      width: 75%;
+      margin-bottom: 20px;
+      margin-left: 12.5%;
+      margin-right: 12.5%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-div input:focus {
+      border: 0.5px solid red;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Examiner-div button {
+      align-self: auto;
+      background: red;
+      color: white;
+      border: 0px;
+      border-radius: 5px;
+      padding: 15px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      display: inline-block;
+      width: 20%;
+      margin-right: 10px;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .AmendStudent-div button {
+      background: red;
+      color: white;
+      border: 0px;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 5px;
+      display: inline-block;
+      width: 30%;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ViewResults {
+      width: 100%;
+      margin: auto;
+    }
+
+    .main-div button,
+    .Examiner-div button,
+    .Examiner-menu-div button,
+    .ViewResults button {
+      background: red;
+      color: white;
+      border: 0px;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 5px;
+      display: block;
+      width: 100%;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .TeacherMenu-div button {
+      background: red;
+      color: white;
+      border: 0px;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 5px;
+      display: block;
+      flex-direction: column;
+      width: 100%;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .teacherlogedin-div button {
+      align-self: auto;
+      background: red;
+      color: white;
+      border: 0px;
+      border-radius: 5px;
+      padding: 15px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      display: inline-block;
+      width: 20%;
+      margin-right: 10px;
+      margin-left: 7%;
+      transition: 0.3;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-div button:hover,
+    .teacherlogedin-div button:hover,
+    .AmendStudent-div button:hover,
+    .TeacherMenu-div button:hover,
+    .Examiner-div button:hover {
+      background: white;
+      color: red;
+     border: 1px solid red;
+      cursor: pointer;
+    }
+
+    body img {
+      margin-top: 100px;
+    display: block;
+    margin: 0 auto;
+    }
+
+    #dis {
+      color: red;
+      font-size: large;
+      font-weight: bold;
+    }
